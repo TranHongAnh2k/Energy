@@ -1,4 +1,4 @@
-#include <DHT.h>
+  #include <DHT.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <WiFiUdp.h>
@@ -36,7 +36,7 @@ int sleepTime = 9680;
 float voMeasured = 0;
 float calcVoltage = 0;
 float dustDensity = 0;
-
+int timezone= 7*3600;
 /************************* WiFi Access Point *********************************/
 String WLAN_SSID;                        //string variable to store ssid
 String WLAN_PASS; 
@@ -53,12 +53,13 @@ unsigned long rst_millis;
 #define LENGTH(x) (strlen(x) + 1)   // length of char string
 #define EEPROM_SIZE 200
 /*************************PZEM Setup ************************************/
-PZEM004Tv30 pzem(12, 14);//RX,TX
+PZEM004Tv30 pzem(12,14);//RX,TX
 float voltage;
 float current;
 float power;
 float energy;
 float frequency;
+
 unsigned long readTime;
 unsigned long dayTime;
 unsigned long timeMqtt;
@@ -217,6 +218,8 @@ void setup()
   MacAddress.remove(10,1);
   Serial.print("ESP8266 Board MAC Address:  ");
   Serial.println(MacAddress);
+
+  configTime(timezone,0,"pool.ntp.org","time.nist.gov");
    while(!time(nullptr)){
     Serial.print("#");
     delay(500);
@@ -264,9 +267,10 @@ void timeCheck(){
    time_t now = time(nullptr);
    struct tm* p_tm=localtime(&now);
    int ngay=p_tm ->tm_mday;
-   Serial.print("Ngay");
+   Serial.print("Ngay: ");
    Serial.println(ngay);
    if (ngay == 1){
+      Serial.println("Reset");
       display.clearDisplay();
       display.setCursor(0, 10);
       display.print("Reset dien ap tieu thu");
@@ -285,6 +289,7 @@ void sensorRead()
   energy = pzem.energy();//kW.h
   frequency = pzem.frequency();//Hz
   display.clearDisplay();
+  Serial.print("Energy: "); Serial.print(energy,5); Serial.println("kWh");
   Serial.print("Dien ap: ");
   Serial.println(voltage);
    display.setCursor(0, 10);
@@ -301,10 +306,10 @@ void sensorRead()
   // Display static text
   display.print("Cong suat:");
   display.print(power);
-  display.println("kW");
+  display.println("W");
   display.setCursor(0, 40);
   // Display static text
-  display.print("Cong suat tieu thu:");
+  display.print("Tieu thu:");
   display.print(energy);
   display.println("kWh");
   display.display();
