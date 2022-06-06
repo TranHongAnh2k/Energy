@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=D0 Pin=IC1-3
+Removed Pin From Net: NetName=D1 Pin=IC1-4
+Removed Pin From Net: NetName=RES Pin=IC1-5
+Removed Pin From Net: NetName=DC Pin=IC1-6
+Removed Pin From Net: NetName=CS Pin=IC1-7
+Removed Pin From Net: NetName=RX Pin=IC1-9
+Removed Pin From Net: NetName=TX Pin=IC1-10
+Removed Pin From Net: NetName=GND Pin=IC1-15
+Removed Pin From Net: NetName=VCC Pin=IC1-16
+Removed Member From Class: ClassName=Sheet1 Member=IC1
+Added Component: Designator=*1(esp)
+Added Pin To Net: NetName=VCC Pin=*1-1
+Added Pin To Net: NetName=GND Pin=*1-2
+Added Pin To Net: NetName=TX Pin=*1-7
+Added Pin To Net: NetName=RX Pin=*1-8
+Added Pin To Net: NetName=CS Pin=*1-10
+Added Pin To Net: NetName=DC Pin=*1-11
+Added Pin To Net: NetName=RES Pin=*1-12
+Added Pin To Net: NetName=D1 Pin=*1-13
+Added Pin To Net: NetName=D0 Pin=*1-14
+Added Member To Class: ClassName=Sheet1 Member=Component *1 Component_1

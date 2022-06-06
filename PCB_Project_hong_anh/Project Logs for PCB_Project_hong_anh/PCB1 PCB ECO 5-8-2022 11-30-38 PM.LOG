@@ -1,0 +1,22 @@
+Removed Pin From Net: NetName=GND Pin=IC1-10
+Removed Pin From Net: NetName=VCC Pin=IC1-15
+Removed Pin From Net: NetName=RX Pin=IC1-22
+Removed Pin From Net: NetName=TX Pin=IC1-23
+Removed Pin From Net: NetName=CS Pin=IC1-26
+Removed Pin From Net: NetName=DC Pin=IC1-27
+Removed Pin From Net: NetName=RES Pin=IC1-28
+Removed Pin From Net: NetName=D1 Pin=IC1-29
+Removed Pin From Net: NetName=D0 Pin=IC1-30
+Removed Member From Class: ClassName=Sheet1 Member=IC1
+Added Component: Designator=IC?(DIP16)
+Added Pin To Net: NetName=D0 Pin=IC?-3
+Added Pin To Net: NetName=D1 Pin=IC?-4
+Added Pin To Net: NetName=RES Pin=IC?-5
+Added Pin To Net: NetName=DC Pin=IC?-6
+Added Pin To Net: NetName=CS Pin=IC?-7
+Added Pin To Net: NetName=RX Pin=IC?-9
+Added Pin To Net: NetName=TX Pin=IC?-10
+Added Pin To Net: NetName=GND Pin=IC?-15
+Added Pin To Net: NetName=VCC Pin=IC?-16
+Added Member To Class: ClassName=Sheet1 Member=Component C2 JP7
+Added Member To Class: ClassName=Sheet1 Member=Component IC? ESP8266 D1

@@ -1,4 +1,4 @@
-  #include <DHT.h>
+#include <DHT.h>
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <WiFiUdp.h>
@@ -53,7 +53,7 @@ unsigned long rst_millis;
 #define LENGTH(x) (strlen(x) + 1)   // length of char string
 #define EEPROM_SIZE 200
 /*************************PZEM Setup ************************************/
-PZEM004Tv30 pzem(12,14);//RX,TX
+PZEM004Tv30 pzem(14,12);//RX,TX
 float voltage;
 float current;
 float power;

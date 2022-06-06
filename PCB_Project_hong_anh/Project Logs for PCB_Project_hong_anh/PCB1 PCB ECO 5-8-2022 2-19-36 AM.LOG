@@ -1,0 +1,5 @@
+Added Component: Designator=IC?(ESP8266 NodeMCU)
+Add component (AddParameter): Name = "WEB"; Value = "TECHMT.VN"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=Sheet1 Member=Component C2 JP7
+Added Member To Class: ClassName=Sheet1 Member=Component IC? ESP8266 NODE MCU
+Added Room: Name=Sheet1
