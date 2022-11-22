@@ -40,6 +40,8 @@ client.on('message', (topic, payload) => {
     }
 })
 
+
+
 async function environment(payload: string, mac: string) {
     try {
         const objPlayload = JSON.parse(payload);
